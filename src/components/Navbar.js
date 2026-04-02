@@ -20,9 +20,37 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-            <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 300, color: '#C9A84C', letterSpacing: '0.2em' }}>SCENTLUX</span>
-            <span style={{ fontFamily: 'Jost, sans-serif', fontSize: '0.55rem', letterSpacing: '0.4em', color: 'rgba(245,240,232,0.4)', textTransform: 'uppercase', marginTop: 1 }}>Maison de Parfum</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            {/* SM Monogram SVG */}
+            <svg width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#E8CC80"/>
+                  <stop offset="50%" stopColor="#C9A84C"/>
+                  <stop offset="100%" stopColor="#A07830"/>
+                </linearGradient>
+                <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#E0E0E0"/>
+                  <stop offset="100%" stopColor="#A0A0A0"/>
+                </linearGradient>
+              </defs>
+              {/* Outer silver block */}
+              <rect x="5" y="10" width="90" height="65" rx="6" fill="url(#silverGrad)" opacity="0.9"/>
+              {/* Gold inner fill */}
+              <rect x="12" y="16" width="76" height="53" rx="4" fill="url(#goldGrad)"/>
+              {/* S shape */}
+              <path d="M18 25 Q18 18 28 18 Q38 18 38 26 Q38 34 28 36 Q18 38 18 46 Q18 54 30 54 Q40 54 40 46" fill="none" stroke="#1A1A1A" strokeWidth="5" strokeLinecap="round"/>
+              {/* M shape */}
+              <path d="M48 54 L48 20 L64 40 L80 20 L80 54" fill="none" stroke="#1A1A1A" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+              {/* Sparkle top-left */}
+              <path d="M3 8 L5 3 L7 8 L5 13 Z" fill="#E8CC80" opacity="0.9"/>
+              {/* Sparkle bottom-right */}
+              <path d="M93 72 L96 66 L99 72 L96 78 Z" fill="#E8CC80" opacity="0.9"/>
+            </svg>
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+              <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, background: 'linear-gradient(135deg, #E8CC80, #C9A84C, #A07830)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '0.05em' }}>ShiningMore</span>
+              <span style={{ fontFamily: 'Jost, sans-serif', fontSize: '0.5rem', letterSpacing: '0.35em', color: 'rgba(245,240,232,0.35)', textTransform: 'uppercase', marginTop: 1 }}>Maison de Parfum</span>
+            </div>
           </div>
         </Link>
 

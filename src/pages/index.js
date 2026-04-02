@@ -31,9 +31,30 @@ export default function Home() {
 
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', paddingTop: 70, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', width: '100%' }}>
           <div className="animate-fade-in">
-            <p style={{ fontFamily: 'Jost, sans-serif', fontSize: '0.7rem', letterSpacing: '0.4em', color: '#C9A84C', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-              — The Art of Scent
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              <svg width="48" height="48" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="goldGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#E8CC80"/>
+                    <stop offset="50%" stopColor="#C9A84C"/>
+                    <stop offset="100%" stopColor="#A07830"/>
+                  </linearGradient>
+                  <linearGradient id="silverGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#E0E0E0"/>
+                    <stop offset="100%" stopColor="#A0A0A0"/>
+                  </linearGradient>
+                </defs>
+                <rect x="5" y="10" width="90" height="65" rx="6" fill="url(#silverGradH)" opacity="0.9"/>
+                <rect x="12" y="16" width="76" height="53" rx="4" fill="url(#goldGradH)"/>
+                <path d="M18 25 Q18 18 28 18 Q38 18 38 26 Q38 34 28 36 Q18 38 18 46 Q18 54 30 54 Q40 54 40 46" fill="none" stroke="#1A1A1A" strokeWidth="5" strokeLinecap="round"/>
+                <path d="M48 54 L48 20 L64 40 L80 20 L80 54" fill="none" stroke="#1A1A1A" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 8 L5 3 L7 8 L5 13 Z" fill="#E8CC80" opacity="0.9"/>
+                <path d="M93 72 L96 66 L99 72 L96 78 Z" fill="#E8CC80" opacity="0.9"/>
+              </svg>
+              <p style={{ fontFamily: 'Jost, sans-serif', fontSize: '0.7rem', letterSpacing: '0.4em', color: '#C9A84C', textTransform: 'uppercase' }}>
+                — The Art of Scent
+              </p>
+            </div>
             <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(3rem, 5vw, 5.5rem)', fontWeight: 300, lineHeight: 1.05, color: '#F5F0E8', marginBottom: '1.5rem' }}>
               Where Fragrance<br />
               <em style={{ color: '#C9A84C', fontStyle: 'italic' }}>Becomes Memory</em>
@@ -110,7 +131,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ background: '#0A0A0A', borderTop: '1px solid rgba(201,168,76,0.1)', padding: '3rem 2rem', textAlign: 'center' }}>
-        <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem', color: '#C9A84C', letterSpacing: '0.3em', marginBottom: '0.5rem' }}>SCENTLUX</div>
+        <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem', background: 'linear-gradient(135deg, #E8CC80, #C9A84C, #A07830)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '0.2em', marginBottom: '0.5rem' }}>ShiningMore</div>
         <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '0.7rem', color: 'rgba(245,240,232,0.3)', letterSpacing: '0.2em' }}>© 2025 MAISON DE PARFUM</div>
       </footer>
     </>
