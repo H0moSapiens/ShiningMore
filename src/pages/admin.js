@@ -114,8 +114,7 @@ function DatabaseExportTab() {
   const exportAll = async () => {
     setExporting(true);
     try {
-      const XLSX = await import('https://cdn.sheetjs.com/xlsx-0.20.1/package/xlsx.mjs');
-      const sheetResults = await Promise.all(
+        const XLSX = (await import('xlsx')).default || await import('xlsx');      const sheetResults = await Promise.all(
         SHEETS.map(s => fetch(`/api/admin/export?sheet=${s.key}`).then(r => r.json()).then(d => ({ ...s, ...d })))
       );
       const wb = await buildWorkbook(XLSX, sheetResults);
@@ -127,8 +126,7 @@ function DatabaseExportTab() {
   const exportCurrent = async () => {
     setExporting(true);
     try {
-      const XLSX = await import('https://cdn.sheetjs.com/xlsx-0.20.1/package/xlsx.mjs');
-      const currentSheet = SHEETS.find(s => s.key === activeSheet);
+      const XLSX = (await import('xlsx')).default || await import('xlsx');      const currentSheet = SHEETS.find(s => s.key === activeSheet);
       const wb = await buildWorkbook(XLSX, [{ ...currentSheet, ...tableData }]);
       XLSX.writeFile(wb, `scentlux_${activeSheet}_${new Date().toISOString().slice(0, 10)}.xlsx`);
     } catch (err) { console.error(err); alert('Export failed.'); }
