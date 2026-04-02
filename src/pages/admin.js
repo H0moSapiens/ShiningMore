@@ -87,7 +87,7 @@ function DatabaseExportTab() {
 
   const formatHeader = (col) => col.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
-  const buildWorkbook = async (XLSX, sheetResults) => {
+  const buildWorkbook = (XLSX, sheetResults) => {
     const wb = XLSX.utils.book_new();
     for (const sheet of sheetResults) {
       const rows = sheet.data || [];
@@ -114,10 +114,11 @@ function DatabaseExportTab() {
   const exportAll = async () => {
     setExporting(true);
     try {
-        const XLSX = (await import('xlsx')).default || await import('xlsx');      const sheetResults = await Promise.all(
+      const XLSX = (await import('xlsx')).default || await import('xlsx');
+      const sheetResults = await Promise.all(
         SHEETS.map(s => fetch(`/api/admin/export?sheet=${s.key}`).then(r => r.json()).then(d => ({ ...s, ...d })))
       );
-      const wb = await buildWorkbook(XLSX, sheetResults);
+      const wb = buildWorkbook(XLSX, sheetResults);
       XLSX.writeFile(wb, `scentlux_database_${new Date().toISOString().slice(0, 10)}.xlsx`);
     } catch (err) { console.error(err); alert('Export failed.'); }
     setExporting(false);
@@ -126,8 +127,9 @@ function DatabaseExportTab() {
   const exportCurrent = async () => {
     setExporting(true);
     try {
-      const XLSX = (await import('xlsx')).default || await import('xlsx');      const currentSheet = SHEETS.find(s => s.key === activeSheet);
-      const wb = await buildWorkbook(XLSX, [{ ...currentSheet, ...tableData }]);
+      const XLSX = (await import('xlsx')).default || await import('xlsx');
+      const currentSheet = SHEETS.find(s => s.key === activeSheet);
+      const wb = buildWorkbook(XLSX, [{ ...currentSheet, ...tableData }]);
       XLSX.writeFile(wb, `scentlux_${activeSheet}_${new Date().toISOString().slice(0, 10)}.xlsx`);
     } catch (err) { console.error(err); alert('Export failed.'); }
     setExporting(false);
