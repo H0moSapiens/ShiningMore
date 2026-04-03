@@ -20,7 +20,7 @@ export default function Navbar() {
         
         {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <img src="/public/logo.webp" alt="ShiningMore" style={{ height: 44, width: 'auto' }} />
+            <img src="/logo.webp" alt="ShiningMore" style={{ height: 44, width: 'auto' }} />
           </Link>
 
         {/* Center Nav */}

@@ -13,7 +13,7 @@ export default function Home() {
 
       {/* Hero */}
       <div style={{ marginBottom: '1.5rem' }}>
-        <img src="/public/logo.webp" alt="ShiningMore" style={{ height: 60, width: 'auto' }} />
+        <img src="/logo.webp" alt="ShiningMore" style={{ height: 60, width: 'auto' }} />
       </div>
 
       {/* Categories strip */}
@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ background: '#0A0A0A', borderTop: '1px solid rgba(201,168,76,0.1)', padding: '3rem 2rem', textAlign: 'center' }}>
-        <img src="/public/logo.webp" alt="ShiningMore" style={{ height: 50, width: 'auto', marginBottom: '0.5rem' }} />
+        <img src="/logo.webp" alt="ShiningMore" style={{ height: 50, width: 'auto', marginBottom: '0.5rem' }} />
       </footer>
     </>
   );
