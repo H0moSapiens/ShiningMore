@@ -93,7 +93,26 @@ export default function Account() {
         <div className="animate-fade-in" style={{ width: '100%', maxWidth: 440, margin: '2rem', background: '#1A1A1A', border: '1px solid rgba(201,168,76,0.2)', padding: '3rem' }}>
           {/* Logo */}
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <img src="/logo.webp" alt="ShiningMore" style={{ height: 70, width: 'auto' }} />
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.5rem' }}>
+              <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="goldGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#E8CC80"/><stop offset="50%" stopColor="#C9A84C"/><stop offset="100%" stopColor="#A07830"/>
+                  </linearGradient>
+                  <linearGradient id="silverGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#E0E0E0"/><stop offset="100%" stopColor="#A0A0A0"/>
+                  </linearGradient>
+                </defs>
+                <rect x="5" y="10" width="90" height="65" rx="6" fill="url(#silverGradA)" opacity="0.9"/>
+                <rect x="12" y="16" width="76" height="53" rx="4" fill="url(#goldGradA)"/>
+                <path d="M18 25 Q18 18 28 18 Q38 18 38 26 Q38 34 28 36 Q18 38 18 46 Q18 54 30 54 Q40 54 40 46" fill="none" stroke="#1A1A1A" strokeWidth="5" strokeLinecap="round"/>
+                <path d="M48 54 L48 20 L64 40 L80 20 L80 54" fill="none" stroke="#1A1A1A" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 8 L5 3 L7 8 L5 13 Z" fill="#E8CC80" opacity="0.9"/>
+                <path d="M93 72 L96 66 L99 72 L96 78 Z" fill="#E8CC80" opacity="0.9"/>
+              </svg>
+            </div>
+            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', background: 'linear-gradient(135deg, #E8CC80, #C9A84C, #A07830)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '0.1em' }}>ShiningMore</div>
+            <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '0.65rem', letterSpacing: '0.25em', color: 'rgba(245,240,232,0.3)', textTransform: 'uppercase', marginTop: 4 }}>Maison de Parfum</div>
           </div>
 
           {/* Tabs */}
