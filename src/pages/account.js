@@ -93,7 +93,7 @@ export default function Account() {
         <div className="animate-fade-in" style={{ width: '100%', maxWidth: 440, margin: '2rem', background: '#1A1A1A', border: '1px solid rgba(201,168,76,0.2)', padding: '3rem' }}>
           {/* Logo */}
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <img src="/logo.webp" alt="ShiningMore" style={{ height: 100, width: 'auto' }} />
+            <img src="/logo.webp" alt="ShiningMore" style={{ height: 80, width: 'auto' }} />
           </div>
 
           {/* Tabs */}
